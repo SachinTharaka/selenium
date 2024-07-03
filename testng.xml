@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Critical Path" verbose="1">
+    <test name="Regression1">
+        <classes>
+            <class name="webinquiry"/>
+            <class name="webbooking">
+
+            </class>
+        </classes>
+    </test>
+</suite>

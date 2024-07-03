@@ -1,0 +1,10 @@
+{
+  "Campaign_Code__c"  :"BBC_HAX",
+  "Type__c" : "Campaign",
+  "Subscribed__c" :"true",
+  "Brand__c" :"Intrepid",
+  "First_Name__c" :"Sachin",
+  "Last_Name__c" :"Tharaka",
+  "Email__c" :"sachin@test.com",
+  "Destination_Interested_In__c" :"Iceland"
+}

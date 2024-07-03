@@ -1,0 +1,36 @@
+{
+  "title": "Mr",
+  "middleName": "Tharaka",
+  "dateOfBirth": "1980-01-01",
+  "homePhone": "0115487956",
+  "mobilePhone": "0435485548",
+
+  "homeAddress": {
+    "addressLine1": "74 Brokesley Street",
+    "addressLine2": "Bournemouth",
+    "city": "Kingswood",
+    "state": "Vic",
+    "postcode": "3167",
+    "countryName": "Australia",
+    "countryCode": "AU"
+  },
+  "passport": {
+    "number": "N89171298",
+    "nationality": "US",
+    "placeOfIssue": "US",
+    "dateOfIssue": "2010-01-01",
+    "dateOfExpiry": "2020-01-01"
+  },
+  "travelInsurancePolicyNumber": "4552",
+  "travelInsuranceCompany": "Slexicover Direct",
+  "travelInsuranceCompanyPhone": "0435698542",
+  "emergencyContact": {
+    "firstName": "Jess",
+    "surname": "Peter",
+    "homePhone": "0115487956",
+    "mobilePhone": "0435485548",
+    "relationship": "Mother"
+  },
+  "dietaryNote": "Allergic to seafood",
+  "medicalNote": "Knee replacement"
+}
