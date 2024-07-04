@@ -87,7 +87,7 @@ public class token {
     }
 
     public WebDriver driver;
-    @BeforeTest
+     @BeforeMethod
     public void set(){
 
         ChromeOptions options = new ChromeOptions();
