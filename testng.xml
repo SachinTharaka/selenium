@@ -2,7 +2,7 @@
 <suite name="Critical Path" verbose="1">
     <test name="Regression1">
         <classes>
-             <class name="indirectwebbooking">
+             <class name="starship_directbooking">
 
             </class> 
         </classes>
