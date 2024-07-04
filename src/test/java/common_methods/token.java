@@ -46,7 +46,7 @@ public class token {
         httpRequest1.header("X-Api-ReferringWebsiteId", globalvariables.XApiReferringWebsiteId);
         httpRequest1.header("Connection", globalvariables.Connection);
 
-        byte[] inp = Files.readAllBytes(Paths.get(".\\src\\test\\java\\jsonfiles\\gettoken.json"));
+        byte[] inp = Files.readAllBytes(Paths.get(".//src//test//java//jsonfiles//gettoken.json"));
         String inputval = new String(inp);
         Response response_strship =httpRequest1.body(inputval).post(globalvariables.Starshiphost+"/token");
         strship_token =response_strship.path("access_token");
