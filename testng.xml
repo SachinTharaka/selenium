@@ -3,7 +3,7 @@
     <test name="Regression1">
         <classes>
             <class name="webinquiry"/>
-            <class name="webbooking">
+              <class name="starship_directbooking">
 
             </class> 
         </classes>
