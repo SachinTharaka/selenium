@@ -26,11 +26,7 @@ public class starship_directbooking extends token {
     String dQuery="SELECT Id,DM_ID__c,BDM_Sales_Model_Name__c FROM Opportunity WHERE DM_ID__c =";
     int bookingId,customerId;
   @DataProvider(name="Dcustomer")
-  public Object[][] getData(){
-    String excelPath =".//src//test//java//excel//Customer.xlsx";
-    Object data[][]= ExcelDataProvider.testData(excelPath,"Sheet1");
-    return data;
-  }
+ 
 
     @Test(dataProvider = "Dcustomer")
     @Severity(SeverityLevel.NORMAL)
@@ -49,9 +45,9 @@ public class starship_directbooking extends token {
           /////////////////////////Add customer///////////////////////////////
         HashMap<String,Object> results = new ObjectMapper().readValue(new File(".//src//test//java//jsonfiles//customer.json"),HashMap.class);
         Map<String, Object> customerData = new HashMap<String, Object>();
-        customerData.put("firstName",Fname);
-        customerData.put("surname",Lname);
-        customerData.put("emailAddress",Email);
+        customerData.put("firstName","schin");
+        customerData.put("surname","test");
+        customerData.put("emailAddress","asasfs@gmail.com");
         Map<String, Object> combineRequest= new HashMap<String, Object>();
         combineRequest.putAll(customerData);
         combineRequest.putAll(results);
