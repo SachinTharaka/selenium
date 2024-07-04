@@ -3,9 +3,9 @@
     <test name="Regression1">
         <classes>
             <class name="webinquiry"/>
-          
+            <class name="webbooking">
 
-            
+            </class> 
         </classes>
     </test>
 </suite>
