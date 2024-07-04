@@ -100,7 +100,7 @@ public class token {
         options.addArguments("--allow-insecure-localhost");
         options.addArguments("--ignore-ssl-errors=yes");
         options.addArguments("--ignore-certificate-errors");
-        System.setProperty("webdriver.chrome.driver",".\\src\\test\\java\\utils\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",".//src//test//java//utils//chromedriver.exe");
         driver = new ChromeDriver(options);
         /*Dimension screenSize = new Dimension(1920, 1080);
         driver.manage().window().setSize(screenSize);*/
