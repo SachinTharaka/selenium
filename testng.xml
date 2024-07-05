@@ -2,7 +2,8 @@
 <suite name="Critical Path" verbose="1">
     <test name="Regression1">
         <classes>
-               <class name="testcase.Verify_User_Access"/>
+               <class name="webinquiry"/>
+               <class name="testcase.Verify_User_Access">
             </class> 
         </classes>
     </test>
