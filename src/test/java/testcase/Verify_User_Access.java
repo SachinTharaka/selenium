@@ -38,7 +38,7 @@ public class Verify_User_Access {
         RequestSpecification create_subscription_details = RestAssured.given();
         create_subscription_details.header("Content-type", globalvariables.ContantType);
         create_subscription_details.header("Authorization", token_type + " " + bearer_token);
-        byte[] inp = Files.readAllBytes(Paths.get(".\\src\\test\\java\\jsonfiles\\customer_interaction.json"));
+        byte[] inp = Files.readAllBytes(Paths.get(".//src//test//java//jsonfiles//customer_interaction.json"));
         String inputval = new String(inp);
         Response subscription_request = create_subscription_details.body(inputval).post(globalvariables.instance_url + "/services/data/v56.0/sobjects/CustomerInteraction__c");
         String customer_interaction_id = subscription_request.path("id");
