@@ -2,7 +2,7 @@
 <suite name="Critical Path" verbose="1">
     <test name="Regression1">
         <classes>
-              <class name="testcase.Service_Genie.Verify_DateFormats">
+               <class name="testcase.Verify_User_Access"/>
             </class> 
         </classes>
     </test>
