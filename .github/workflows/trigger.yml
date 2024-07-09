@@ -6,7 +6,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
       - name: trigger the automated test in another repo
-        uses: SachinTharaka/repository-dispatch@v3
+        uses: SachinTharaka
         with:
           token: ${{ secrets.REPO_ACC }}
           repository: SachinTharaka/qa_privaterepo
