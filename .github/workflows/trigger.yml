@@ -1,3 +1,4 @@
+#dev_repo
 name: trigger test in another repository
 on: workflow_dispatch
 jobs:
