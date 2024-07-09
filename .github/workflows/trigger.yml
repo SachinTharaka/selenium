@@ -6,8 +6,9 @@ jobs:
      runs-on: ubuntu-latest
      steps:
       - name: trigger the automated test in another repo
+        uses: SachinTharaka/qa_automation-dispatch@v3
        
         with:
           token: ${{ secrets.REPO }}
-          repository: SachinTharaka/qa_automation
+          repository: Sachin Indradasa/qa_automation
           event-type: my-event
