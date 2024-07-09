@@ -1,4 +1,4 @@
-name: Run tests maven
+name: Run tests maven with trigger
 'on':
   push:
     branches:
