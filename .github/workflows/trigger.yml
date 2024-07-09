@@ -9,6 +9,6 @@ jobs:
         uses: actions/checkout@v3
        
         with:
-          token: ${{ secrets.REPO }}
+          token: ${{ secrets.REPO_A }}
           repository: Sachin Indradasa/qa_automation
           event-type: my-event
