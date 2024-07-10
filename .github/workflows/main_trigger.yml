@@ -20,9 +20,16 @@ jobs:
      
 
 
-      - name: Publish test report
+      - name: Generate Allure Report
+        run: |
+          npm install -g allure-commandline
+          allure generate allure-results -o allure-report --clean
+
+   ## Deploy step      
+      - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: always().
         with:
-           github_token: ${{ secrets.REPO_A }}
-           publish_branch: master
+            github_token: ${{ secrets.REPO_A }} 
+            publish_dir: ./allure-report
+            publish_branch: master
+            keep_files: false
