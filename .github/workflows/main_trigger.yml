@@ -17,22 +17,8 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn test
-      - name: Generate Allure report
-        run: >
-          curl -o allure-2.13.8.zip -L
-          https://github.com/allure-framework/allure2/releases/download/2.13.8/allure-2.13.8.zip
-
-          sudo apt-get install unzip
-
-          unzip allure-2.13.8.zip -d /opt/allure
-
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-
-          allure generate target/allure-results --clean -o target/allure-report
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v2
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          allure-results: target/allure-results
-          gh_pages: master
-          name: allure-report
-          path: target/allure-report
+         github_token: ${{ secrets.REPO_A }}
+         publish_dir: ./target/allure-report
