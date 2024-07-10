@@ -17,6 +17,9 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn test
+
+      - name: Clean previous Allure results and report
+        run:  rm -rf target/allure-results
      
 
 
@@ -24,6 +27,8 @@ jobs:
         run: |
           npm install -g allure-commandline
           allure generate allure-results -o allure-report --clean
+
+          
 
    ## Deploy step      
       - name: Deploy Allure Report to GitHub Pages
