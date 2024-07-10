@@ -1,8 +1,8 @@
 name: Run tests maven with trigger
 'on':
   repository_dispatch:
-    types: [my-event]
-   
+    types:
+      - my-event
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,82 +17,24 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn test
-      - name: Generate Allure report
-      run: |
-        curl -o allure-2.13.8.zip -L https://github.com/allure-framework/allure2/releases/download/2.13.8/allure-2.13.8.zip
-        sudo apt-get install unzip
-        unzip allure-2.13.8.zip -d /opt/allure
-        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-        allure generate target/allure-results --clean -o target/allure-report
-        allure open target/allure-report
-Explanation
-Checkout code: Uses the actions/checkout@v2 action to check out the repository.
-Set up JDK 11: Sets up the Java environment (if you are using a Java project).
-Install dependencies: Installs your project dependencies (for example, using Maven).
-Run tests and generate Allure results: Runs your tests, which should generate Allure results.
-Generate Allure report:
-Downloads the Allure CLI.
-Unzips it to a directory.
-Creates a symbolic link to the Allure binary.
-Generates the Allure report from the results.
-Opens the Allure report (optional).
-Step 3: Upload the Allure Report as an Artifact (Optional)
-To upload the Allure report as an artifact so you can download it later, add the following step:
-
-yaml
-Copy code
-    - name: Upload Allure Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: allure-report
-        path: target/allure-report
-Complete Workflow Example
-Here's a complete example for a Maven-based Java project:
-
-yaml
-Copy code
-name: Allure Report
-
-on: [push, pull_request]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-
-    - name: Install dependencies
-      run: mvn install
-
-    - name: Run tests and generate Allure results
-      run: mvn test
-
-    - name: Generate Allure report
-      run: |
-        curl -o allure-2.13.8.zip -L https://github.com/allure-framework/allure2/releases/download/2.13.8/allure-2.13.8.zip
-        sudo apt-get install unzip
-        unzip allure-2.13.8.zip -d /opt/allure
-        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-        allure generate target/allure-results --clean -o target/allure-report
-
-    - name: Upload Allure Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: allure-report
-        path: target/allure-report
-
-
-
-
-
-
-
-
-  
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: build/allure-results
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: '${{ secrets.REPO_A }}'
+          publish_branch: gh-pages
+          publish_dir: allure-history
