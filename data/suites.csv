@@ -1,4 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Jul 10 09:34:28 UTC 2024","Wed Jul 10 09:34:35 UTC 2024","6863","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
-"passed","Wed Jul 10 09:34:39 UTC 2024","Wed Jul 10 09:34:44 UTC 2024","4767","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
-"passed","Wed Jul 10 09:34:35 UTC 2024","Wed Jul 10 09:34:39 UTC 2024","4821","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
+"passed","Tue Jul 16 04:19:18 UTC 2024","Tue Jul 16 04:19:26 UTC 2024","7509","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
+"passed","Tue Jul 16 04:19:26 UTC 2024","Tue Jul 16 04:19:30 UTC 2024","4576","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
+"passed","Tue Jul 16 04:19:30 UTC 2024","Tue Jul 16 04:19:35 UTC 2024","4804","Critical Path","Regression1","webinquiry","webinquiry","Webinquiry","Create a Web Inquiry with Data ",""
