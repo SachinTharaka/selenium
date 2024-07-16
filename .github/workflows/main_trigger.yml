@@ -17,24 +17,36 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn test
-
       - name: Clean previous Allure results and report
-        run:  rm -rf target/allure-results
-     
-
-
+        run: rm -rf target/allure-results
       - name: Generate Allure Report
         run: |
           npm install -g allure-commandline
           allure generate allure-results -o allure-report --clean
-
-          
-
-   ## Deploy step      
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-            github_token: ${{ secrets.REPO_A }} 
-            publish_dir: ./allure-report
-            publish_branch: allure-report
-            keep_files: false
+          github_token: '${{ secrets.REPO_A }}'
+          publish_dir: ./allure-report
+          publish_branch: allure-report
+          keep_files: false
+          
+  jobs: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: '${{ secrets.SMTP_USERNAME }}'
+          password: '${{ secrets.SMTP_PASSWORD }}'
+          subject: GitHub Actions Test Email
+          body: |
+            This is a test email sent from a GitHub Action!
+            - Repository: ${{ github.repository }}
+            - Commit SHA: ${{ github.sha }}
+          to: tharakaindradasa93@gmail.com
+          from: '${{ secrets.SMTP_USERNAME }}'
