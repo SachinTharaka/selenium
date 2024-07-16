@@ -48,5 +48,6 @@ jobs:
               This is a test email sent from a GitHub Action!
               - Repository: ${{ github.repository }}
               - Commit SHA: ${{ github.sha }}
+              - URL: https://sachintharaka.github.io/selenium/
             to: tharakaindradasa93@gmail.com
             from: '${{ secrets.SMTP_USERNAME }}'
