@@ -1,4 +1,4 @@
-name: Run tests maven with trigger
+name: Run tests maven with trigger-work_final
 'on':
   repository_dispatch:
     types:
