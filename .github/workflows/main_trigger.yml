@@ -20,7 +20,6 @@ jobs:
       - name: Clean previous Allure results and report
         run: rm -rf target/allure-results
       - name: Generate Allure Report
-        if: always()
         run: |
           npm install -g allure-commandline
           allure generate allure-results -o allure-report --clean
@@ -29,7 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: '${{ secrets.REPO_A }}'
-          publish_dir: ./allure-report
+          publish_dir: ./target/site/allure-maven-plugin
           publish_branch: allure-report
           keep_reports: 8
   job2:
