@@ -27,9 +27,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: '${{ secrets.REPO_A }}'
-          publish_dir: ./allure-report
-          publish_branch: allure-report
-          keep_reports: 8
+          publish_dir: ./target/site/allure-maven-plugin
+         
   job2:
       runs-on: ubuntu-latest
       needs: job1
