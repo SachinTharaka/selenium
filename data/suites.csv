@@ -1,4 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","7125","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:10 UTC 2024","passed","Thu Aug 15 08:43:17 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
-"","4694","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:22 UTC 2024","passed","Thu Aug 15 08:43:26 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
-"","5030","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:17 UTC 2024","passed","Thu Aug 15 08:43:22 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","4921","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:46:58 UTC 2024","passed","Thu Aug 15 08:47:03 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","4569","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:46:54 UTC 2024","passed","Thu Aug 15 08:46:58 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","5116","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:46:49 UTC 2024","passed","Thu Aug 15 08:46:54 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","5736","Salesforcebooking","Critical Path","Thu Aug 15 08:46:42 UTC 2024","broken","Thu Aug 15 08:46:48 UTC 2024","webbooking","Regression1","webbooking","Salesforcebooking"
