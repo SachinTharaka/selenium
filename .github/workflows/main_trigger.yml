@@ -20,10 +20,12 @@ jobs:
       - name: Clean previous Allure results and report
         run: rm -rf target/allure-results
       - name: Generate Allure Report
+        if: always()
         run: |
           npm install -g allure-commandline
           allure generate allure-results -o allure-report --clean
       - name: Deploy Allure Report to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: '${{ secrets.REPO_A }}'
