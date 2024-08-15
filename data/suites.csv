@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4893","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:27:02 UTC 2024","passed","Thu Aug 15 08:27:07 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
-"","7307","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:26:54 UTC 2024","passed","Thu Aug 15 08:27:02 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
-"","4633","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:27:07 UTC 2024","passed","Thu Aug 15 08:27:11 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","7125","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:10 UTC 2024","passed","Thu Aug 15 08:43:17 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","4694","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:22 UTC 2024","passed","Thu Aug 15 08:43:26 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
+"","5030","Create a Web Inquiry with Data ","Critical Path","Thu Aug 15 08:43:17 UTC 2024","passed","Thu Aug 15 08:43:22 UTC 2024","webinquiry","Regression1","webinquiry","Webinquiry"
