@@ -20,6 +20,7 @@ jobs:
       - name: Clean previous Allure results and report
         run: rm -rf target/allure-results
       - name: Generate Allure Report
+        if: always()
         run: mvn allure:report
       - name: Deploy Allure Report to GitHub Pages
         if: always()
