@@ -45,7 +45,7 @@ jobs:
       - name: get specified property
         uses: ActionsTools/read-json-action@main
         with: 
-          file_path: allure-report/widgets/suites.json
+          file_path: https://github.com/SachinTharaka/selenium/tree/allure-report/widgets/suites.json
           
       - run: |
           echo ${{steps.repository_type.statistic.total}}
