@@ -45,7 +45,7 @@ jobs:
         - name: Parse Test Case Count
           id: test_count
           run: |
-           test_case_count=$(jq '.statistic.total' https://github.com/SachinTharaka/selenium/tree/allure-report/widgets/suites.json)
+           test_case_count=$(jq '.statistic.total' "https://github.com/SachinTharaka/selenium/tree/allure-report/widgets/suites.json")
            echo "test_case_count=$test_case_count" >> $GITHUB_ENV
         - name: Send email
           uses: dawidd6/action-send-mail@v3
