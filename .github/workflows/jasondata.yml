@@ -16,10 +16,12 @@ jobs:
         id: open_json
         run: |
           # Replace 'your-file.json' with the path to your JSON file
-          cat /selenium/tree/allure-report/widgets/suites.json
+          ls -la
+          cd ./allure-report/widgets
+          ls -la
 
           # Extract a value from the JSON file using jq
-          value=$(jq -r '.total' https://github.com/SachinTharaka/selenium/blob/allure-report/widgets/suites.json)
+          value=$(jq -r '.total' suites.json)
           echo "Extracted value: $value"
 
           # Save the value to an environment variable for later use
