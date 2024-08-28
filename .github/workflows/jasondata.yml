@@ -1,0 +1,30 @@
+name: Open JSON File Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  open-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Open and Parse JSON File
+        id: open_json
+        run: |
+          # Replace 'your-file.json' with the path to your JSON file
+          cat your-file.json
+
+          # Extract a value from the JSON file using jq
+          value=$(jq -r '.total' https://github.com/SachinTharaka/selenium/blob/allure-report/widgets/suites.json)
+          echo "Extracted value: $value"
+
+          # Save the value to an environment variable for later use
+          echo "json_value=$value" >> $GITHUB_ENV
+
+      - name: Use Extracted JSON Value
+        run: |
+          echo "Using extracted JSON value: ${{ env.json_value }}"
