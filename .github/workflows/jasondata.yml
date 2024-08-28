@@ -3,7 +3,7 @@ name: Open JSON File Example
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   open-json:
