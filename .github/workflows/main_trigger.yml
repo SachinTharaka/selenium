@@ -40,26 +40,28 @@ jobs:
       needs: job1
       if: always()
       steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-        - name: Parse Test Case Count
-          id: test_count
-          run: |
-           test_case_count=$(jq '.statistic.total' "https://github.com/SachinTharaka/selenium/tree/allure-report/widgets/suites.json")
-           echo "test_case_count=$test_case_count" >> $GITHUB_ENV
-        - name: Send email
-          uses: dawidd6/action-send-mail@v3
-          with:
-            server_address: smtp.gmail.com
-            server_port: 465
-            username: '${{ secrets.SMTP_USERNAME }}'
-            password: '${{ secrets.SMTP_PASSWORD }}'
-            subject: GitHub Actions Test Email
-            body: |
-              This is a test email sent from a GitHub Action!
-              - Repository: ${{ github.repository }}
-              - Commit SHA: ${{ github.sha }}
-              - URL: https://sachintharaka.github.io/selenium/
-              -  The test case count is ${{ env.test_case_count }}.
-            to: tharakaindradasa93@gmail.com
-            from: '${{ secrets.SMTP_USERNAME }}'
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: get specified property
+        uses: ActionsTools/read-json-action@main
+        with: 
+          file_path: allure-report/widgets/suites.json
+          
+      - run: |
+          echo ${{steps.repository_type.statistic.total}}
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: '${{ secrets.SMTP_USERNAME }}'
+          password: '${{ secrets.SMTP_PASSWORD }}'
+          subject: GitHub Actions Test Email
+          body: |
+            This is a test email sent from a GitHub Action!
+            - Repository: ${{ github.repository }}
+            - Commit SHA: ${{ github.sha }}
+            - URL: https://sachintharaka.github.io/selenium/
+            -  The test case count is ${{ env.test_case_count }}.
+          to: tharakaindradasa93@gmail.com
+          from: '${{ secrets.SMTP_USERNAME }}'
