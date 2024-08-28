@@ -17,7 +17,7 @@ jobs:
         run: |
           # Replace 'your-file.json' with the path to your JSON file
           ls -la
-          find ./allure-report/widgets
+          find ./selenium/treeallure-report/widgets
           ls -la
 
           # Extract a value from the JSON file using jq
