@@ -42,13 +42,14 @@ jobs:
       steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: get specified property
-        uses: ActionsTools/read-json-action@main
+      - name: get properties
+        id: json_properties
+        uses: zoexx/github-action-json-file-properties@release
         with: 
-          file_path: ./selenium/tree/allue-report/widgets/suites.json
-          
+         file_path: suites.json
       - run: |
-          echo ${{steps.repository_type.statistic.total}}
+          echo ${{steps.json_properties.outputs.name}}
+          echo ${{steps.json_properties.outputs.version}}
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
