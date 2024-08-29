@@ -78,7 +78,7 @@ jobs:
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
             - The test case Total is ${{ env.total_testcase }}.
-            - The test case Pass is ${{ env.fail_testcase }}.
-            - The test case Fail is ${{ env.pass_testcase }}.
+            - The test case Pass is ${{ env.pass_testcase }}.
+            - The test case Fail is ${{ env.fail_testcase }}.
           to: tharakaindradasa93@gmail.com
           from: '${{ secrets.SMTP_USERNAME }}'
