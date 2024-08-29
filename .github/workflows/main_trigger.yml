@@ -47,7 +47,7 @@ jobs:
 
       - name: Read JSON file
         run: |
-          JSON_DATA=$(cat allure-report/widgets/suites.json)
+          JSON_DATA=$(cat selenium/tree/allure-report/widgets/suites.json)
           echo "Full JSON: $JSON_DATA"
       - name: Send email
         uses: dawidd6/action-send-mail@v3
