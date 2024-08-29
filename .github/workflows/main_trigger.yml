@@ -42,16 +42,13 @@ jobs:
       steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: allure-report
-      - name: get properties
-        id: json_properties
-        uses: zoexx/github-action-json-file-properties@release
-        with: 
-         file_path: suites.json
-      - run: |
-          echo ${{steps.json_properties.outputs.name}}
-          echo ${{steps.json_properties.outputs.version}}
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Read JSON file
+        run: |
+          JSON_DATA=$(cat allure-report/widgets/suites.json)
+          echo "Full JSON: $JSON_DATA"
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
