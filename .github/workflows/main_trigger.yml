@@ -53,13 +53,16 @@ jobs:
           echo "Full JSON: $JSON_DATA"
       - name: Extract value from JSON
         run: |
-          VALUE=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
-          VALUEs=$(jq -r '.items[0].statistic.failed' ./widgets/suites.json)
-          VALUEss=$(jq -r '.items[0].statistic.passed' ./widgets/suites.json)
-          echo "Extracted Value: $VALUE"
-          echo "Extracted Value: $VALUEs"
-          echo "Extracted Value: $VALUEss"
-           echo "json_value=$VALUE" >> $GITHUB_ENV
+          Total=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
+          Fail=$(jq -r '.items[0].statistic.failed' ./widgets/suites.json)
+          Pass=$(jq -r '.items[0].statistic.passed' ./widgets/suites.json)
+          echo "Extracted Value: $Total"
+          echo "Extracted Value: $Fail"
+          echo "Extracted Value: $Pass"
+           echo "total_testcase=$Total" >> $GITHUB_ENV
+           echo "fail_testcase=$Fail" >> $GITHUB_ENV
+           echo "pass_testcase=$Pass" >> $GITHUB_ENV
+
 
       - name: Send email
         uses: dawidd6/action-send-mail@v3
@@ -74,8 +77,8 @@ jobs:
             - Repository: ${{ github.repository }}
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
-            - The test case Total is ${{ env.json_value }}.
-            - The test case Pass is $VALUEss.
-            - The test case Fail is $VALUEs.
+            - The test case Total is ${{ env.total_testcase }}.
+            - The test case Pass is ${{ env.fail_testcase }}.
+            - The test case Fail is ${{ env.pass_testcase }}.
           to: tharakaindradasa93@gmail.com
           from: '${{ secrets.SMTP_USERNAME }}'
