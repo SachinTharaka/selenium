@@ -51,6 +51,10 @@ jobs:
         run: |
           JSON_DATA=$(cat ./widgets/suites.json)
           echo "Full JSON: $JSON_DATA"
+      - name: Extract value from JSON
+        run: |
+          VALUE=$(jq -r '.items.uid' suites.json)
+          echo "Extracted Value: $VALUE"
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
