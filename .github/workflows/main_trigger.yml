@@ -54,7 +54,11 @@ jobs:
       - name: Extract value from JSON
         run: |
           VALUE=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
+          VALUEs=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
+          VALUEss=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
           echo "Extracted Value: $VALUE"
+          echo "Extracted Value: $VALUEs"
+          echo "Extracted Value: $VALUEss"
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
