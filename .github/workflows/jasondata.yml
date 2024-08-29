@@ -1,32 +1,19 @@
-name: Open JSON File Example
-
-on:
-  push:
-    branches:
-      - master
-
+name: trigger test in another repository
+on: workflow_dispatch
 jobs:
-  open-json:
+ read-json:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Open and Parse JSON File
-        id: open_json
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      # List the directories and verify file exists
+      - name: List directories
         run: |
-          # Replace 'your-file.json' with the path to your JSON file
-          ls -la
-          find ./selenium/treeallure-report/widgets
-          ls -la
+          ls -R selenium/tree
+          ls -R selenium/tree/allure-report
 
-          # Extract a value from the JSON file using jq
-          value=$(jq -r '.total' suites.json)
-          echo "Extracted value: $value"
-
-          # Save the value to an environment variable for later use
-          echo "json_value=$value" >> $GITHUB_ENV
-
-      - name: Use Extracted JSON Value
+      # Now try reading the JSON file
+      - name: Read JSON file
         run: |
-          echo "Using extracted JSON value: ${{ env.json_value }}"
+          cat selenium/tree/allure-report/widgets/suites.json
