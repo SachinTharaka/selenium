@@ -54,8 +54,8 @@ jobs:
       - name: Extract value from JSON
         run: |
           VALUE=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
-          VALUEs=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
-          VALUEss=$(jq -r '.items[0].statistic.total' ./widgets/suites.json)
+          VALUEs=$(jq -r '.items[0].statistic.failed' ./widgets/suites.json)
+          VALUEss=$(jq -r '.items[0].statistic.passed' ./widgets/suites.json)
           echo "Extracted Value: $VALUE"
           echo "Extracted Value: $VALUEs"
           echo "Extracted Value: $VALUEss"
@@ -72,6 +72,8 @@ jobs:
             - Repository: ${{ github.repository }}
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
-            -  The test case count is ${{ env.test_case_count }}.
+            - The test case Total is $VALUE.
+            - The test case Pass is $VALUEss.
+            - The test case Fail is $VALUEs.
           to: tharakaindradasa93@gmail.com
           from: '${{ secrets.SMTP_USERNAME }}'
