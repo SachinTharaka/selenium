@@ -11,9 +11,9 @@ jobs:
       - name: List directories
         run: |
           ls -R selenium/tree
-          ls -R selenium/tree/allure-report
+          ls -R selenium/tree/master/src/test/java/jsonfiles
 
       # Now try reading the JSON file
       - name: Read JSON file
         run: |
-          cat selenium/tree/allure-report/widgets/suites.json
+          cat selenium/tree/master/src/test/java/jsonfiles/customer.json
