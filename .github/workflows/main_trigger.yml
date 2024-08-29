@@ -72,7 +72,7 @@ jobs:
             - Repository: ${{ github.repository }}
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
-            - The test case Total is $VALUE.
+            - The test case Total is $(jq -r '.items[0].statistic.total' ./widgets/suites.json)
             - The test case Pass is $VALUEss.
             - The test case Fail is $VALUEs.
           to: tharakaindradasa93@gmail.com
