@@ -73,7 +73,7 @@ jobs:
           password: '${{ secrets.SMTP_PASSWORD }}'
           subject: GitHub Actions Test Email
           body: |
-            <h3>This is a test email sent from a GitHub Action!</h3>
+            This is the test result email sent from a GitHub Action!
             - Repository: ${{ github.repository }}
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
