@@ -59,6 +59,8 @@ jobs:
           echo "Extracted Value: $VALUE"
           echo "Extracted Value: $VALUEs"
           echo "Extracted Value: $VALUEss"
+           echo "json_value=$VALUE" >> $GITHUB_ENV
+
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
@@ -72,7 +74,7 @@ jobs:
             - Repository: ${{ github.repository }}
             - Commit SHA: ${{ github.sha }}
             - URL: https://sachintharaka.github.io/selenium/
-            - The test case Total is $(jq -r '.items[0].statistic.total' ./widgets/suites.json)
+            - The test case Total is ${{ env.json_value }}.
             - The test case Pass is $VALUEss.
             - The test case Fail is $VALUEs.
           to: tharakaindradasa93@gmail.com
