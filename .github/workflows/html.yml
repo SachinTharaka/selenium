@@ -1,28 +1,29 @@
-name: Inline HTML Script Example
+name: Generate HTML
 
 on: [push]
 
 jobs:
-  inline-html:
+  generate-html:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Generate and test HTML in script
+      - name: Write HTML to file
         run: |
-          HTML_CONTENT="
+          echo "
           <!DOCTYPE html>
           <html>
           <head>
-              <title>Inline Test HTML</title>
+              <title>Test HTML</title>
           </head>
           <body>
-              <h1>Hello from Inline Script</h1>
+              <h1>Hello, World!</h1>
+              <p>This HTML was generated in a GitHub Actions workflow.</p>
           </body>
           </html>
-          "
-          echo "$HTML_CONTENT" > inline_test.html
-          # Test or manipulate the HTML here
-          cat inline_test.html
+          " > test.html
+
+      - name: Display HTML content
+        run: cat test.html
