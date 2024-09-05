@@ -1,0 +1,28 @@
+name: Inline HTML Script Example
+
+on: [push]
+
+jobs:
+  inline-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate and test HTML in script
+        run: |
+          HTML_CONTENT="
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Inline Test HTML</title>
+          </head>
+          <body>
+              <h1>Hello from Inline Script</h1>
+          </body>
+          </html>
+          "
+          echo "$HTML_CONTENT" > inline_test.html
+          # Test or manipulate the HTML here
+          cat inline_test.html
