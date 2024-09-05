@@ -21,7 +21,7 @@ jobs:
           from: '${{ secrets.SMTP_USERNAME }}'  # Your email address
           to: tharakaindradasa93@gmail.com  # Recipient email address
           
-          body: |
+          html_body: |
             <!DOCTYPE html>
             <html>
             <head>
