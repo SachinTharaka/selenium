@@ -13,7 +13,7 @@ jobs:
       - name: Send Email with HTML body
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.example.com  # Replace with your SMTP server
+          server_address: smtp.gmail.com  # Replace with your SMTP server
           server_port: 465  # Replace with your SMTP port (587 for TLS)
           username: ${{ secrets.SMTP_USERNAME }}  # Stored in GitHub Secrets
           password: ${{ secrets.SMTP_PASSWORD }}  # Stored in GitHub Secrets
