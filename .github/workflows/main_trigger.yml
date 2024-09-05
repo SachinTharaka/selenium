@@ -72,6 +72,8 @@ jobs:
           username: '${{ secrets.SMTP_USERNAME }}'
           password: '${{ secrets.SMTP_PASSWORD }}'
           subject: GitHub Actions Test Email
+          from: '${{ secrets.SMTP_USERNAME }}'
+          to: tharakaindradasa93@gmail.com
           content_type: text/html
           body: |
           
@@ -89,5 +91,5 @@ jobs:
             </html>
          
            
-          to: tharakaindradasa93@gmail.com
-          from: '${{ secrets.SMTP_USERNAME }}'
+          
+         
