@@ -74,23 +74,20 @@ jobs:
           subject: GitHub Actions Test Email
           content_type: text/html
           body: |
+          
            <!DOCTYPE html>
             <html>
             <head>
-              <title>GitHub Actions Email</title>
+              <title>HTML Email</title>
             </head>
             <body>
-            This is the test result email sent from a GitHub Action!
-            - Repository: ${{ github.repository }}
-            - Commit SHA: ${{ github.sha }}
-            - URL: https://sachintharaka.github.io/selenium/
-            - The test case Total is ${{ env.total_testcase }}.
-            - The test case Pass is ${{ env.pass_testcase }}.
-            - The test case Fail is ${{ env.fail_testcase }}.
-            <h1 style="color:blue;">Hello, World!</h1>
-              <p>This is an email sent from a GitHub Actions workflow with <strong>HTML formatting</strong>.</p>
-              <p>Visit <a href="https://github.com">GitHub</a> for more information.</p>
+              <h1 style="color:blue;">Hello from GitHub Actions!</h1>
+              <p>This is an email sent from a GitHub Actions workflow.</p>
+              <p>Here's a link: <a href="https://github.com">Visit GitHub</a></p>
+              <p><strong>Enjoy your day!</strong></p>
             </body>
             </html>
+         
+           
           to: tharakaindradasa93@gmail.com
           from: '${{ secrets.SMTP_USERNAME }}'
