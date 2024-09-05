@@ -20,7 +20,7 @@ jobs:
           subject: "HTML Email Test"
           from: '${{ secrets.SMTP_USERNAME }}'  # Your email address
           to: tharakaindradasa93@gmail.com  # Recipient email address
-          content_type: text/html  # Ensure content type is HTML
+          content_type: html  # Ensure content type is HTML
           body: |
             <!DOCTYPE html>
             <html>
