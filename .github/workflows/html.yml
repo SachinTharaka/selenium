@@ -1,29 +1,35 @@
-name: Generate HTML
+name: Send HTML Email
 
 on: [push]
 
 jobs:
-  generate-html:
+  send-email:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Write HTML to file
-        run: |
-          echo "
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Test HTML</title>
-          </head>
-          <body>
-              <h1>Hello, World!</h1>
-              <p>This HTML was generated in a GitHub Actions workflow.</p>
-          </body>
-          </html>
-          " > test.html
-
-      - name: Display HTML content
-        run: cat test.html
+      - name: Send Email with HTML body
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.example.com  # Replace with your SMTP server
+          server_port: 465  # Replace with your SMTP port (587 for TLS)
+          username: ${{ secrets.SMTP_USERNAME }}  # Stored in GitHub Secrets
+          password: ${{ secrets.SMTP_PASSWORD }}  # Stored in GitHub Secrets
+          subject: "HTML Email Test"
+          from: '${{ secrets.SMTP_USERNAME }}'  # Your email address
+          to: tharakaindradasa93@gmail.com  # Recipient email address
+          content_type: text/html  # Ensure content type is HTML
+          body: |
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>Email with HTML</title>
+            </head>
+            <body>
+              <h1 style="color:blue;">Hello from GitHub Actions!</h1>
+              <p>This email contains HTML content sent from a GitHub Actions workflow.</p>
+              <p>Visit <a href="https://github.com">GitHub</a> to learn more.</p>
+            </body>
+            </html>
