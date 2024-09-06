@@ -74,9 +74,8 @@ jobs:
           subject: GitHub Actions Test Email
           from: '${{ secrets.SMTP_USERNAME }}'
           to: tharakaindradasa93@gmail.com
-          content_type: text/html
-          body: |
           
+          html_body: |
            <!DOCTYPE html>
             <html>
             <head>
@@ -86,9 +85,13 @@ jobs:
               <h1 style="color:blue;">Hello from GitHub Actions!</h1>
               <p>This is an email sent from a GitHub Actions workflow.</p>
               <p>Here's a link: <a href="https://github.com">Visit GitHub</a></p>
+              <p>The test case Total is ${{ env.total_testcase }}.</p>
+              <p>The test case Pass is ${{ env.pass_testcase }}.</p>
+              <p>The test case Fail is ${{ env.fail_testcase }}</p>
               <p><strong>Enjoy your day!</strong></p>
             </body>
             </html>
+          content_type: text/html
          
            
           
