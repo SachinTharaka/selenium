@@ -2,8 +2,8 @@
 <suite name="Critical Path" verbose="1">
     <test name="Regression1">
         <classes>
-               <class name="webbooking"/>
-             
+              <class name="testcase.Service_Genie.Verify_DateFormats"/>
+              <class name="starship_directbooking"/>
                <class name="webinquiry">
               
             </class> 
